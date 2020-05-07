@@ -33,6 +33,7 @@ action :install do
     destination ::File.join(new_resource.root_path, 'plugins', new_resource.name)
     repository new_resource.git_url
     reference new_resource.git_ref
+    checkout_branch 'deploy'
     user new_resource.user if new_resource.user
     action :sync
   end
